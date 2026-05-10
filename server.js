@@ -5,16 +5,13 @@ const cors = require("cors");
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Test route (optional but useful)
 app.get("/", (req, res) => {
     res.send("✅ AI Chatbot Server is Running");
 });
 
-// Chat endpoint
 app.post("/chat", async (req, res) => {
     const userMessage = req.body.message;
 
@@ -56,7 +53,6 @@ app.post("/chat", async (req, res) => {
     }
 });
 
-// 🔥 IMPORTANT FOR RENDER
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
